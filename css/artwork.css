@@ -1,0 +1,120 @@
+.tattoos {
+  background-color: rgb(255, 58, 176);
+}
+
+.moving-image {
+  background-color: rgb(252, 252, 252);
+}
+
+.circle-workshop {
+  background-color: rgb(214, 255, 52);
+}
+
+/* Shared layout for artwork pages */
+.artwork-page {
+  padding: 3rem 1rem; /* space from edges and fixed logo */
+}
+
+.gallery {
+  width: min(92vw, 1200px);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Slightly smaller gallery only on Circle Workshop page */
+.circle-workshop .gallery {
+  width: min(80vw, 900px);
+}
+
+/* .row.one img {
+  width: 100%;
+  height: auto;
+  display: block;
+} */
+
+.row.two img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Constrain photography images to viewport height */
+.photography .gallery img {
+  max-height: 98vh;
+  height: auto;
+  width: auto; /* override generic 100% to allow height cap to work */
+  max-width: 100%; /* still prevent overflow horizontally */
+}
+
+/* Allow single images within two-column rows to span full width */
+.row.two img.full {
+  grid-column: 1 / -1;
+}
+
+.row.two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* Center images within grid cells on photography page */
+.photography .gallery .row.two {
+  justify-items: center;
+}
+
+/* On small screens, stack two-up rows vertically */
+@media (max-width: 640px) {
+  .row.two {
+    grid-template-columns: 1fr;
+  }
+}
+
+.back-link {
+  font-family: "Inconsolata", monospace;
+  color: #161616;
+  text-decoration: underline;
+}
+
+.header-right {
+  position: fixed;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 10;
+}
+
+/* Stacked videos layout */
+.video-stack {
+  width: min(92vw, 1200px);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.video-stack video,
+.video-stack iframe {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+/* Text block for long copy sections on artwork pages */
+.text-block {
+  width: min(92vw, 1200px);
+  margin: 2rem auto 5rem auto;
+  text-align: center;
+}
+.text-block p {
+  font-family: "Inconsolata", monospace;
+  color: #161616;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Add a small gap between consecutive paragraphs */
+.text-block p + p {
+  margin-top: 1rem;
+}

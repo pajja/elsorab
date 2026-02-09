@@ -1,0 +1,10 @@
+# Normalize line endings
+* text=auto
+
+# Treat media as binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.mp4 binary
+*.ico binary
