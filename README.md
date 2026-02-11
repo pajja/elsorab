@@ -10,7 +10,7 @@ A lightweight static website for Laila Sorabji (El Sorab), featuring:
 
 - index.html — landing page and navigation
 - about.html — about overlay with background video
-- artwork/ — section pages (tattoos.html, photography.html, movingImage.html, circleWorkshop.html)
+- artwork/ — section pages (tattoos.html, tattoosSketch.html, tattoosSkin.html, photography.html, movingImage.html, circleWorkshop.html)
 - assets/ — images and videos
 - css/ — styles.css (global), artwork.css (section layouts)
 - js/ — main.js (submenu interactivity)
@@ -40,4 +40,4 @@ git commit -m "Initial commit: site"
 - Images/videos are treated as binary in .gitattributes.
 - Meta descriptions and hidden H1s added for basic SEO.
 - Accessibility: uses visually-hidden utility where needed.
-"# elsorab"  git init git add README.md git commit -m "first commit" git branch -M main git remote add origin https://github.com/pajja/elsorab.git git push -u origin main
+  "# elsorab" git init git add README.md git commit -m "first commit" git branch -M main git remote add origin https://github.com/pajja/elsorab.git git push -u origin main
