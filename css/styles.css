@@ -123,10 +123,14 @@ footer.visually-hidden {
   background-color: #191919; /* softer dark for submenu */
   border-color: #191919; /* match border to background */
 }
-.artwork-menu:hover .submenu-group {
-  opacity: 1;
-  pointer-events: auto;
+/* Only enable hover-triggered submenu on devices that actually support hover */
+@media (hover: hover) and (pointer: fine) {
+  .artwork-menu:hover .submenu-group {
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
+/* Keep submenu visible when JS toggles 'open' */
 /* Keep submenu visible when JS toggles 'open' */
 .artwork-menu.open .submenu-group {
   opacity: 1;
