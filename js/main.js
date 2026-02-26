@@ -9,6 +9,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // Prevent navigation when clicking the artwork button
     artworkToggle.addEventListener("click", (e) => {
       e.preventDefault();
+      // Toggle menu on click for mobile
+      if (artworkMenu.classList.contains("open")) {
+        artworkMenu.classList.remove("open");
+        artworkToggle.setAttribute("aria-expanded", "false");
+      } else {
+        artworkMenu.classList.add("open");
+        artworkToggle.setAttribute("aria-expanded", "true");
+      }
     });
     // Also prevent keyboard activation (Enter/Space)
     artworkToggle.addEventListener("keydown", (e) => {

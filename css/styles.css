@@ -69,6 +69,8 @@ body {
   /* fade in after 200ms, linear */
   opacity: 0;
   animation: aboutFadeIn 200ms ease 300ms forwards;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .nav-links a {
   display: inline-flex;
@@ -188,6 +190,60 @@ footer.visually-hidden {
   }
   to {
     opacity: 1;
+  }
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .nav-links {
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .nav-links a {
+    width: clamp(120px, 70vw, 200px);
+    font-size: clamp(14px, 2.5vw, 18px);
+    aspect-ratio: 6 / 2;
+  }
+
+  .artwork-menu .submenu-group {
+    width: clamp(120px, 70vw, 200px);
+  }
+
+  .artwork-menu .submenu-group a {
+    font-size: clamp(12px, 2vw, 16px);
+    aspect-ratio: 5 / 2;
+  }
+
+  .about-circle {
+    width: clamp(200px, 90vw, 600px);
+    aspect-ratio: 4 / 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    gap: 1.5rem;
+  }
+
+  .nav-links a {
+    width: clamp(100px, 80vw, 150px);
+    font-size: clamp(12px, 3vw, 16px);
+    aspect-ratio: 5 / 2;
+  }
+
+  .artwork-menu .submenu-group {
+    width: clamp(100px, 80vw, 150px);
+  }
+
+  .artwork-menu .submenu-group a {
+    font-size: clamp(10px, 2.5vw, 14px);
+    aspect-ratio: 4 / 2;
+  }
+
+  .about-circle {
+    width: clamp(160px, 90vw, 300px);
+    aspect-ratio: 3 / 2;
   }
 }
 
