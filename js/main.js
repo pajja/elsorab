@@ -5,29 +5,54 @@ document.addEventListener("DOMContentLoaded", () => {
   const mainContent = document.querySelector("main");
   const bgVideo = document.getElementById("bg-video");
 
+  // Check if start screen has already been shown in this session
+  const startScreenShown = sessionStorage.getItem("startScreenShown");
+
   if (startButton && startScreen && mainContent) {
-    startButton.addEventListener("click", () => {
-      // Hide start screen
+    // If returning to index.html after navigating away, skip the start screen
+    if (startScreenShown) {
       startScreen.style.display = "none";
-
-      // Show main content
       mainContent.classList.remove("hidden");
-
-      // Start the background video
       if (bgVideo) {
         bgVideo.play().catch((error) => {
           console.log("Video play failed:", error);
         });
       }
-
-      // Trigger animations after content is visible
+      // Trigger animations for nav links
       setTimeout(() => {
         const navLinks = document.querySelector(".nav-links");
         if (navLinks) {
           navLinks.classList.add("animate-in");
         }
-      }, 50); // Small delay to ensure content is rendered
-    });
+      }, 50);
+    } else {
+      // First time loading - show start screen
+      startButton.addEventListener("click", () => {
+        // Mark that start screen has been shown
+        sessionStorage.setItem("startScreenShown", "true");
+
+        // Hide start screen
+        startScreen.style.display = "none";
+
+        // Show main content
+        mainContent.classList.remove("hidden");
+
+        // Start the background video
+        if (bgVideo) {
+          bgVideo.play().catch((error) => {
+            console.log("Video play failed:", error);
+          });
+        }
+
+        // Trigger animations after content is visible
+        setTimeout(() => {
+          const navLinks = document.querySelector(".nav-links");
+          if (navLinks) {
+            navLinks.classList.add("animate-in");
+          }
+        }, 50); // Small delay to ensure content is rendered
+      });
+    }
   }
 
   const artworkToggle = document.querySelector(".artwork-toggle");
