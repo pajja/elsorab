@@ -105,6 +105,8 @@ body {
   object-fit: cover;
   z-index: -1; /* behind content */
   opacity: 1; /* simple white effect via page background */
+  /* Ensure video loads and plays even when parent is hidden */
+  visibility: visible !important;
 }
 
 /* Centered nav links styling */
