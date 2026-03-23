@@ -282,17 +282,17 @@ footer.visually-hidden {
 
   .nav-links a {
     width: clamp(100px, 80vw, 150px);
-    font-size: clamp(12px, 3vw, 16px);
+    font-size: clamp(16px, 4vw, 20px);
     aspect-ratio: 5 / 2;
   }
 
   .artwork-menu .submenu-group {
-    width: clamp(100px, 80vw, 150px);
+    width: clamp(100px, 80vw, 140px);
   }
 
   .artwork-menu .submenu-group a {
-    font-size: clamp(10px, 2.5vw, 14px);
-    aspect-ratio: 4 / 2;
+    font-size: clamp(14px, 3.5vw, 18px);
+    aspect-ratio: 5 / 2;
   }
 
   .about-circle {
