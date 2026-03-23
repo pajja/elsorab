@@ -1,4 +1,35 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Handle start screen
+  const startScreen = document.getElementById("start-screen");
+  const startButton = document.getElementById("start-button");
+  const mainContent = document.querySelector("main");
+  const bgVideo = document.getElementById("bg-video");
+
+  if (startButton && startScreen && mainContent) {
+    startButton.addEventListener("click", () => {
+      // Hide start screen
+      startScreen.style.display = "none";
+
+      // Show main content
+      mainContent.classList.remove("hidden");
+
+      // Start the background video
+      if (bgVideo) {
+        bgVideo.play().catch((error) => {
+          console.log("Video play failed:", error);
+        });
+      }
+
+      // Trigger animations after content is visible
+      setTimeout(() => {
+        const navLinks = document.querySelector(".nav-links");
+        if (navLinks) {
+          navLinks.classList.add("animate-in");
+        }
+      }, 50); // Small delay to ensure content is rendered
+    });
+  }
+
   const artworkToggle = document.querySelector(".artwork-toggle");
   const artworkMenu = document.querySelector(".artwork-menu");
   const submenuGroups = document.querySelectorAll(

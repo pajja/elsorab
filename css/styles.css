@@ -23,6 +23,52 @@ body {
   background-color: #f6f6f6; /* ensure light gray shows through */
 }
 
+/* Start screen overlay */
+.start-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f6f6f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.start-button {
+  background-color: #f6f6f6;
+  color: #161616;
+  border: 2px solid #161616;
+  border-radius: 50%;
+  width: clamp(140px, 50vw, 140px);
+  aspect-ratio: 5 / 2;
+  font-family: "Inconsolata", monospace;
+  font-size: clamp(18px, 3.2vw, 20px);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.start-button:hover {
+  background-color: #161616;
+  color: #f6f6f6;
+}
+
+.start-button:focus {
+  outline: 2px solid #161616;
+  outline-offset: 2px;
+}
+
+/* Hidden content initially */
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.5s ease,
+    visibility 0.5s ease;
+}
+
 /* Logo fixed at top-left */
 .navbar {
   position: fixed;
@@ -68,9 +114,13 @@ body {
   z-index: 1;
   /* fade in after 200ms, linear */
   opacity: 0;
-  animation: aboutFadeIn 200ms ease 300ms forwards;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+/* Animation class applied when content becomes visible */
+.nav-links.animate-in {
+  animation: aboutFadeIn 200ms ease 300ms forwards;
 }
 .nav-links a {
   display: inline-flex;

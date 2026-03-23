@@ -17,12 +17,17 @@
     <link rel="manifest" href="/site.webmanifest" />
   </head>
   <body>
+    <!-- Start screen overlay -->
+    <div id="start-screen" class="start-screen">
+      <button id="start-button" class="start-button">start</button>
+    </div>
+
     <!-- main -->
-    <main>
+    <main class="hidden">
       <h1 class="visually-hidden">Laila Sorabji</h1>
       <section class="hero">
         <!-- background video -->
-        <video autoplay muted loop playsinline class="bg-video">
+        <video id="bg-video" muted loop playsinline class="bg-video">
           <source
             src="assets/images/landing/elegia-short-animation-1s.mp4"
             type="video/mp4"
