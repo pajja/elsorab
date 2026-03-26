@@ -1,9 +1,55 @@
+/* Photography collection link cards */
+.photo-collections {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: min(92vw, 700px);
+  margin: 0 auto;
+}
+
+.photo-link-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #161616;
+  text-decoration: none;
+  padding: 10px;
+  width: 100%;
+  background: #f6f6f6;
+  transition: box-shadow 0.2s;
+}
+
+.photo-link-text {
+  color: #161616;
+  text-decoration: underline;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0 0 10px 0;
+  background: #f6f6f6;
+}
+
+.photo-link-img-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f6f6f6;
+}
+.photo-link-img-container img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
 .tattoos {
   background-color: rgb(255, 58, 176);
 }
 
 .moving-image {
-  background-color: rgb(252, 252, 252);
+  /* background-color: rgb(125, 229, 255); */
+  background-color: #f6f6f6;
 }
 
 .circle-workshop {
@@ -28,13 +74,7 @@
   width: min(80vw, 900px);
 }
 
-/* .row.one img {
-  width: 100%;
-  height: auto;
-  display: block;
-} */
-
-.row.two img {
+.row img {
   width: 100%;
   height: auto;
   display: block;
@@ -55,28 +95,28 @@
   max-width: 100%;
 }
 
-.tattoos .gallery .row.two {
+.tattoos .gallery .row {
   justify-items: center;
 }
 
 /* Allow single images within two-column rows to span full width */
-.row.two img.full {
+.row img.full {
   grid-column: 1 / -1;
 }
 
-.row.two {
+.row {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
 /* Center images within grid cells on photography page */
-.photography .gallery .row.two {
+.photography .gallery .row {
   justify-items: center;
 }
 
 /* On small screens, stack two-up rows vertically */
 @media (max-width: 640px) {
-  .row.two {
+  .row {
     grid-template-columns: 1fr;
   }
 }
@@ -120,12 +160,44 @@
 .text-block p {
   font-family: "Inconsolata", monospace;
   color: #161616;
-  line-height: 1.5;
+  line-height: 1.25;
   margin: 0;
 }
 
 /* Add a small gap between consecutive paragraphs */
 .text-block p + p {
+  margin-top: 1rem;
+}
+
+.house-poem-div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+
+/* .housewife-h3 {
+  width: 100%;
+  text-align: center;
+  color: #161616;
+  font-family: "Inconsolata", monospace;
+  margin-bottom: 5vh;
+} */
+
+.housewife-poem {
+  width: min(100%, 800px);
+}
+
+.housewife-poem p {
+  margin: 0;
+  color: #161616;
+  font-family: "Inconsolata", monospace;
+  font-size: 1rem;
+  line-height: 1.1;
+  text-align: right;
+}
+
+.housewife-poem p + p {
   margin-top: 1rem;
 }
 
@@ -158,4 +230,146 @@
 .preview-card {
   width: auto;
   height: 90vh;
+}
+
+.moving-image-accordion {
+  width: min(92vw, 1200px);
+  margin: 0 auto;
+}
+
+.moving-image-item {
+  margin-top: 1rem;
+  background-color: #f6f6f6;
+}
+
+.moving-image-heading {
+  margin: 0;
+  text-align: center;
+}
+
+.moving-image-toggle {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: #161616;
+  text-decoration: underline;
+  font-family: "Inconsolata", monospace;
+  font-size: 1.15rem;
+  line-height: 1.25;
+  text-align: center;
+  cursor: none;
+}
+
+.moving-image-toggle:focus-visible {
+  outline: 2px solid #161616;
+  outline-offset: 6px;
+}
+
+.moving-image-panel {
+  margin-top: 1rem;
+}
+
+.moving-image-embed {
+  width: min(100%, 960px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.moving-image-description {
+  width: min(100%, 760px);
+  margin: 1rem auto 0;
+  text-align: center;
+}
+
+.moving-image-description p {
+  margin: 0;
+  color: #161616;
+  font-family: "Inconsolata", monospace;
+  font-size: 1rem;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.moving-image-description p + p {
+  margin-top: 1rem;
+}
+
+.moving-image-embed iframe {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+.moving-image-gallery {
+  width: min(100%, 960px);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.moving-image-gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.moving-image-poem {
+  width: min(100%, 760px);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4rem;
+}
+
+.moving-image-poem p {
+  margin: 0;
+  color: #161616;
+  font-family: "Inconsolata", monospace;
+  font-size: clamp(1rem);
+  line-height: 1.55;
+  text-align: right;
+}
+
+.moving-image-poem p + p {
+  margin-top: 1.5rem;
+}
+
+.expand-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  pointer-events: none;
+  color: rgb(255, 58, 176);
+  font-family: "Inconsolata", monospace;
+  font-size: 1rem;
+  text-transform: lowercase;
+  opacity: 0;
+  transform: translate(10px, 10px);
+  transition: opacity 120ms ease;
+}
+
+.expand-cursor.is-visible {
+  opacity: 1;
+}
+
+@media (max-width: 640px) {
+  .moving-image-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .moving-image-toggle {
+    cursor: pointer;
+  }
+
+  .expand-cursor {
+    display: none;
+  }
 }
