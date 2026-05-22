@@ -168,10 +168,10 @@ footer.visually-hidden {
   z-index: 2;
 }
 .artwork-menu .submenu-group a {
-  width: 100%; /* match group width clamp */
-  aspect-ratio: 6 / 2;
+  width: 90%; /* match group width clamp */
+  aspect-ratio: 7 / 2;
   /* Slightly smaller text than main circles */
-  font-size: clamp(16px, 2.6vw, 20px);
+  font-size: clamp(14px, 2vw, 18px);
   background-color: #191919; /* softer dark for submenu */
   border-color: #191919; /* match border to background */
 }
@@ -267,8 +267,8 @@ footer.visually-hidden {
   }
 
   .artwork-menu .submenu-group a {
-    font-size: clamp(12px, 2vw, 16px);
-    aspect-ratio: 5 / 2;
+    font-size: clamp(11px, 1.9vw, 15px);
+    aspect-ratio: 6 / 2;
   }
 
   .about-circle {
@@ -293,8 +293,8 @@ footer.visually-hidden {
   }
 
   .artwork-menu .submenu-group a {
-    font-size: clamp(14px, 3.5vw, 18px);
-    aspect-ratio: 5 / 2;
+    font-size: clamp(12px, 3vw, 16px);
+    aspect-ratio: 6 / 2;
   }
 
   .about-circle {

@@ -56,6 +56,10 @@
   background-color: rgb(214, 255, 52);
 }
 
+.undocumented-daily {
+  background-color: rgb(255, 32, 32);
+}
+
 /* Shared layout for artwork pages */
 .artwork-page {
   padding: 3rem 1rem; /* space from edges and fixed logo */
@@ -119,6 +123,10 @@
   .row {
     grid-template-columns: 1fr;
   }
+
+  .undocumented-pair {
+    grid-template-columns: 1fr;
+  }
 }
 
 .back-link {
@@ -167,6 +175,39 @@
 /* Add a small gap between consecutive paragraphs */
 .text-block p + p {
   margin-top: 1rem;
+}
+
+.undocumented-section {
+  width: min(92vw, 900px);
+  margin: 0 auto 5rem;
+}
+
+.undocumented-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.undocumented-pair + .undocumented-copy,
+.undocumented-copy + .undocumented-pair {
+  margin-top: 5rem;
+}
+
+.undocumented-pair img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.undocumented-copy {
+  width: min(92vw, 600px);
+}
+
+.undocumented-copy p {
+  color: #f6f6f6;
+  text-align: justify;
 }
 
 .house-poem-div {
