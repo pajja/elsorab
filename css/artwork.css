@@ -3,8 +3,9 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  width: min(92vw, 700px);
+  width: min(80vw, 700px);
   margin: 0 auto;
+  padding-right: 20px;
 }
 
 .photo-link-card {
@@ -62,11 +63,11 @@
 
 /* Shared layout for artwork pages */
 .artwork-page {
-  padding: 3rem 1rem; /* space from edges and fixed logo */
+  padding: 3rem 1rem 3rem 1rem; /* space from edges and fixed logo */
 }
 
 .gallery {
-  width: min(92vw, 1200px);
+  width: min(92vw, 1100px);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -100,6 +101,7 @@
 }
 
 .tattoos .gallery .row {
+  gap: 1rem;
   justify-items: center;
 }
 
@@ -116,17 +118,6 @@
 /* Center images within grid cells on photography page */
 .photography .gallery .row {
   justify-items: center;
-}
-
-/* On small screens, stack two-up rows vertically */
-@media (max-width: 640px) {
-  .row {
-    grid-template-columns: 1fr;
-  }
-
-  .undocumented-pair {
-    grid-template-columns: 1fr;
-  }
 }
 
 .back-link {
@@ -179,7 +170,7 @@
 
 .undocumented-section {
   width: min(92vw, 900px);
-  margin: 0 auto 5rem;
+  margin: 0 auto;
 }
 
 .undocumented-pair {
@@ -240,15 +231,12 @@
 
 /* Tattoos landing: preview cards */
 .tattoos .preview-card {
+  display: flex;
+  flex-direction: column;
   border: 1px solid #161616;
   padding: 0.75rem;
+  width: min(100%, 26rem);
   text-align: center;
-  justify-self: center; /* center the card within the grid column */
-}
-.tattoos .preview-card a {
-  font-family: "Inconsolata", monospace;
-  color: #161616;
-  text-decoration: underline;
 }
 /* When the card itself is an anchor, style the label */
 .tattoos .preview-card .preview-label {
@@ -258,15 +246,27 @@
   margin: 0;
 }
 .tattoos .gallery img.preview-image {
-  width: auto;
-  height: 85vh;
+  width: 100%;
+  height: 35rem;
+  object-fit: contain;
+  object-position: center;
   display: block;
   margin: 0.5rem auto 0;
 }
 
-.preview-card {
-  width: auto;
-  height: 90vh;
+@media (max-width: 768px) {
+  .header-right {
+    position: absolute;
+  }
+
+  .tattoos .gallery .row {
+    grid-template-columns: 1fr;
+  }
+
+  .tattoos .gallery img.preview-image {
+    width: 100%;
+    height: auto;
+  }
 }
 
 .moving-image-accordion {
@@ -315,7 +315,7 @@
 
 .moving-image-description {
   width: min(100%, 760px);
-  margin: 1rem auto 0;
+  margin: 1rem auto 1rem;
   text-align: center;
 }
 
@@ -395,9 +395,13 @@
   opacity: 1;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .moving-image-gallery {
     grid-template-columns: 1fr;
+  }
+
+  .moving-image-poem {
+    margin-top: 0;
   }
 }
 
@@ -408,5 +412,33 @@
 
   .expand-cursor {
     display: none;
+  }
+}
+
+/* On small screens, stack two-up rows vertically */
+@media (max-width: 768px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .pair {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .undocumented-pair {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    justify-items: center;
+  }
+
+  .undocumented-pair + .undocumented-copy,
+  .undocumented-copy + .undocumented-pair {
+    margin: 2rem 0;
+  }
+
+  .undocumented-pair img {
+    width: 90%;
+    margin: 0.5rem 0;
   }
 }
