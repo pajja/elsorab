@@ -136,7 +136,7 @@ body {
   aspect-ratio: 7 / 2; /* keep it a circle */
   text-decoration: none;
   font-family: "Inconsolata", monospace;
-  font-size: clamp(22px, 5vw, 24px);
+  font-size: clamp(20px, 5vw, 24px);
   line-height: 1.1;
   white-space: nowrap; /* keep single line */
   margin: 0 50px;
@@ -220,7 +220,7 @@ footer.visually-hidden {
   max-width: 80%;
   max-height: 80%;
   line-height: 1.4;
-  font-size: clamp(13px, 2vw, 16px);
+  font-size: clamp(14px, 2vw, 16px);
   text-align: center; /* center the about text */
 }
 .about-content p {
@@ -278,19 +278,25 @@ footer.visually-hidden {
 
 @media (max-width: 640px) {
   .about-circle {
-    aspect-ratio: 2 / 1;
+    aspect-ratio: 10 / 5;
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 530px) {
   .about-circle {
-    aspect-ratio: 5 / 3;
+    aspect-ratio: 10 / 7;
   }
 }
 
 @media (max-width: 460px) {
   .about-circle {
     aspect-ratio: 10 / 9;
+  }
+}
+
+@media (max-width: 415px) {
+  .about-circle {
+    aspect-ratio: 10 / 12;
   }
 }
 
